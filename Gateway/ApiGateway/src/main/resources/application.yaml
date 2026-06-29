@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: apigateway
+  cloud:
+    gateway:
+      routes:
+        - id: UserService
+          uri: http://user-service:8081
+          predicates:
+            - Path=/api/users/**
+server:
+  port: 8080

@@ -3,37 +3,76 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for review-service" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.32/lombok-1.18.32.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-        </processorPath>
-        <module name="review-service" />
-      </profile>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ServiceDiscovery" />
       </profile>
-      <profile name="Annotation profile for book-service" enabled="true">
+      <profile name="Annotation profile for api-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
+        <module name="api-service" />
+        <module name="Orderservice" />
         <module name="book-service" />
+        <module name="UserService" />
+        <module name="Gateway" />
+        <module name="review-service" />
+        <module name="book-service (1)" />
+        <module name="user-service" />
+        <module name="LoadBalancing" />
+        <module name="ApiGateway" />
+        <module name="PaymentService" />
+        <module name="review-service (1)" />
+      </profile>
+      <profile name="Annotation profile for auth-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+        </processorPath>
+        <module name="api-gateway" />
+        <module name="auth-service" />
+        <module name="WebSecurity" />
+        <module name="Resilience" />
+      </profile>
+      <profile name="Annotation profile for post-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+        </processorPath>
+        <module name="post-service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ApiGateway" options="-parameters" />
+      <module name="Gateway" options="-parameters" />
+      <module name="LoadBalancing" options="-parameters" />
+      <module name="Orderservice" options="-parameters" />
+      <module name="PaymentService" options="-parameters" />
+      <module name="Resilience" options="-parameters" />
+      <module name="ServiceDiscovery" options="-parameters" />
+      <module name="UserService" options="-parameters" />
+      <module name="WebSecurity" options="-parameters" />
+      <module name="api-gateway" options="-parameters" />
+      <module name="api-service" options="-parameters" />
+      <module name="auth-service" options="-parameters" />
       <module name="book-service" options="-parameters" />
+      <module name="book-service (1)" options="-parameters" />
+      <module name="post-service" options="-parameters" />
       <module name="review-service" options="-parameters" />
+      <module name="review-service (1)" options="-parameters" />
+      <module name="user-service" options="-parameters" />
     </option>
   </component>
 </project>

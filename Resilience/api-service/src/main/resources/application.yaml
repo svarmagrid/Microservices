@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: api-service
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,circuitbreakers,retries,circuitbreakerevents,retryevents
+
+resilience4j:
+  circuitbreaker:
+    circuitBreakerAspectOrder: 1
+    instances:
+      userService:
+        slidingWindowSize: 5
+        minimumNumberOfCalls: 3
+        failureRateThreshold: 50
+        waitDurationInOpenState: 20s
+        permittedNumberOfCallsInHalfOpenState: 2
+  retry:
+    retryAspectOrder: 2
+    instances:
+      userService:
+        maxAttempts: 3
+        waitDuration: 1s
+        ignoreExceptions:
+          - io.github.resilience4j.circuitbreaker.CallNotPermittedException

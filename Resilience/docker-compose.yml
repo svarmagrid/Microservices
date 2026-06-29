@@ -1,0 +1,17 @@
+services:
+
+  user-service:
+    build: ./user-service
+    container_name: userService
+    ports:
+      - "8081:8081"
+
+  api-service:
+    build: ./api-service
+    container_name: api-service
+    ports:
+      - "8080:8080"
+    environment:
+      - USER_SERVICE_URL=http://user-service:8081
+    depends_on:
+      - user-service

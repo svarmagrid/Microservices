@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Gateway/ApiGateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Gateway/UserService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LoadBalancing/Orderservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LoadBalancing/PaymentService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LoadBalancing/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Resilience/api-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Resilience/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Resilience/user-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ServiceDiscovery/book-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ServiceDiscovery/review-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ServiceDiscovery/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SubmodulesIntegration/book-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SubmodulesIntegration/review-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebSecurity/api-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebSecurity/auth-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebSecurity/post-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebSecurity/src/main/java" charset="UTF-8" />
   </component>
 </project>

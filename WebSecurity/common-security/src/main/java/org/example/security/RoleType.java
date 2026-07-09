@@ -1,0 +1,9 @@
+package org.example.security;
+
+public enum RoleType {
+
+    ROLE_USER,
+    ROLE_ADMIN,
+    ROLE_SERVICE
+
+}

@@ -1,3 +1,25 @@
 spring:
   application:
     name: notification-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/secure_blog_notifications
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+
+server:
+  port: 8083
+
+jwt:
+  secret: bXlTdXBlclNlY3JldEtleUZvclNlY3VyZUJsb2dBcHBsaWNhdGlvbjIwMjZNeVN1cGVyU2VjcmV0S2V5
+  expiration: 86400000
+  service-expiration: 3600000
+
+allowed-services:
+  internal-notification-creators:
+    - post-service

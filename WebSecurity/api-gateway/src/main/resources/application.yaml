@@ -1,3 +1,26 @@
 spring:
   application:
     name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: auth-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/auth/**
+        - id: post-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/posts/**
+        - id: notification-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/notifications/**
+
+server:
+  port: 8080
+
+jwt:
+  secret: bXlTdXBlclNlY3JldEtleUZvclNlY3VyZUJsb2dBcHBsaWNhdGlvbjIwMjZNeVN1cGVyU2VjcmV0S2V5
+  expiration: 86400000
+  service-expiration: 3600000

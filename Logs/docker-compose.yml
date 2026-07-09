@@ -1,0 +1,116 @@
+services:
+  # ─── Infrastructure ───────────────────────────────────────────────
+  elasticsearch:
+    image: elasticsearch:8.13.0
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ports:
+      - "9200:9200"
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    networks:
+      - logs-net
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:9200/_cluster/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+
+  logstash:
+    image: logstash:8.13.0
+    container_name: logstash
+    ports:
+      - "5000:5000/tcp"   # Log ingestion (TCP JSON)
+      - "9600:9600"       # Logstash monitoring API
+    volumes:
+      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
+    environment:
+      - LS_JAVA_OPTS=-Xms256m -Xmx256m
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    networks:
+      - logs-net
+
+  kibana:
+    image: kibana:8.13.0
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    networks:
+      - logs-net
+
+  # ─── Application Services ─────────────────────────────────────────
+  auth-service:
+    build: ./auth-service
+    container_name: auth-service
+    ports:
+      - "8081:8081"
+    environment:
+      - LOGSTASH_HOST=logstash
+      - LOGSTASH_PORT=5000
+      - SPRING_APPLICATION_NAME=auth-service
+    depends_on:
+      - logstash
+    networks:
+      - logs-net
+
+  post-service:
+    build: ./post-service
+    container_name: post-service
+    ports:
+      - "8082:8082"
+    environment:
+      - LOGSTASH_HOST=logstash
+      - LOGSTASH_PORT=5000
+      - SPRING_APPLICATION_NAME=post-service
+    depends_on:
+      - logstash
+    networks:
+      - logs-net
+
+  notification-service:
+    build: ./notification-service
+    container_name: notification-service
+    ports:
+      - "8083:8083"
+    environment:
+      - LOGSTASH_HOST=logstash
+      - LOGSTASH_PORT=5000
+      - SPRING_APPLICATION_NAME=notification-service
+    depends_on:
+      - logstash
+    networks:
+      - logs-net
+
+  api-gateway:
+    build: ./api-gateway
+    container_name: api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - LOGSTASH_HOST=logstash
+      - LOGSTASH_PORT=5000
+      - SPRING_APPLICATION_NAME=api-gateway
+    depends_on:
+      - logstash
+      - auth-service
+      - post-service
+      - notification-service
+    networks:
+      - logs-net
+
+volumes:
+  elasticsearch-data:
+
+networks:
+  logs-net:
+    driver: bridge

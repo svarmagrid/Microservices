@@ -24,6 +24,10 @@
         <option value="$PROJECT_DIR$/WebSecurity/api-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/WebSecurity/auth-service/pom.xml" />
         <option value="$PROJECT_DIR$/WebSecurity/post-service/pom.xml" />
+        <option value="$PROJECT_DIR$/WebSecurity/notification-service/pom.xml" />
+        <option value="$PROJECT_DIR$/Logs/pom.xml" />
+        <option value="$PROJECT_DIR$/Metrics/pom.xml" />
+        <option value="$PROJECT_DIR$/Traces/pom.xml" />
       </list>
     </option>
   </component>

@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: post-service
+
+server:
+  port: 8082
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  endpoint:
+    health:
+      show-details: always
+    prometheus:
+      enabled: true
+  metrics:
+    tags:
+      service: ${spring.application.name}
+    export:
+      prometheus:
+        enabled: true
+
+logging:
+  level:
+    root: INFO

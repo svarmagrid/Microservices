@@ -1,3 +1,33 @@
 spring:
   application:
     name: auth-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/secure_blog
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  jackson:
+    serialization:
+      indent-output: true
+
+server:
+  port: 8081
+
+jwt:
+  secret: bXlTdXBlclNlY3JldEtleUZvclNlY3VyZUJsb2dBcHBsaWNhdGlvbjIwMjZNeVN1cGVyU2VjcmV0S2V5
+  expiration: 86400000
+  service-expiration: 3600000
+
+logging:
+  level:
+    org.springframework.security: INFO
+    org.hibernate.SQL: DEBUG

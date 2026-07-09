@@ -1,0 +1,65 @@
+services:
+  # ─── Infrastructure ───────────────────────────────────────────────
+  zipkin:
+    image: openzipkin/zipkin:3.2
+    container_name: zipkin
+    ports:
+      - "9411:9411"
+    networks:
+      - traces-net
+
+  # ─── Application Services ─────────────────────────────────────────
+  auth-service:
+    build: ./auth-service
+    container_name: auth-service
+    ports:
+      - "8081:8081"
+    environment:
+      - ZIPKIN_URL=http://zipkin:9411/api/v2/spans
+    depends_on:
+      - zipkin
+    networks:
+      - traces-net
+
+  post-service:
+    build: ./post-service
+    container_name: post-service
+    ports:
+      - "8082:8082"
+    environment:
+      - ZIPKIN_URL=http://zipkin:9411/api/v2/spans
+    depends_on:
+      - zipkin
+    networks:
+      - traces-net
+
+  notification-service:
+    build: ./notification-service
+    container_name: notification-service
+    ports:
+      - "8083:8083"
+    environment:
+      - ZIPKIN_URL=http://zipkin:9411/api/v2/spans
+    depends_on:
+      - zipkin
+    networks:
+      - traces-net
+
+  api-gateway:
+    build: ./api-gateway
+    container_name: api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - ZIPKIN_URL=http://zipkin:9411/api/v2/spans
+    depends_on:
+      - zipkin
+      - auth-service
+      - post-service
+      - notification-service
+    networks:
+      - traces-net
+
+networks:
+  traces-net:
+    driver: bridge

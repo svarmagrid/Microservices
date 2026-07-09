@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: notification-service
+
+server:
+  port: 8083
+
+logstash:
+  host: ${LOGSTASH_HOST:localhost}
+  port: ${LOGSTASH_PORT:5000}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+logging:
+  level:
+    root: INFO
+    org.example.notificationservice: DEBUG

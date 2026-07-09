@@ -7,6 +7,18 @@
     <file url="file://$PROJECT_DIR$/LoadBalancing/Orderservice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LoadBalancing/PaymentService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LoadBalancing/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Logs/api-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Logs/auth-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Logs/notification-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Logs/post-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Logs/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Logs/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Metrics/api-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Metrics/auth-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Metrics/notification-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Metrics/post-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Metrics/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Metrics/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resilience/api-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resilience/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resilience/user-service/src/main/java" charset="UTF-8" />
@@ -15,9 +27,17 @@
     <file url="file://$PROJECT_DIR$/ServiceDiscovery/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SubmodulesIntegration/book-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SubmodulesIntegration/review-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Traces/api-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Traces/notification-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Traces/post-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Traces/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Traces/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/WebSecurity/api-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/WebSecurity/auth-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebSecurity/common-security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebSecurity/notification-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/WebSecurity/post-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/WebSecurity/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebSecurity/src/main/resources" charset="UTF-8" />
   </component>
 </project>

@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: auth-service
+
+server:
+  port: 8081
+
+# Zipkin tracing - endpoint is configurable via env var
+management:
+  tracing:
+    sampling:
+      probability: 1.0       # Sample 100% of requests (reduce in production)
+  zipkin:
+    tracing:
+      endpoint: ${ZIPKIN_URL:http://localhost:9411/api/v2/spans}
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+logging:
+  level:
+    root: INFO
+    # Log trace IDs in every log line
+    org.example.authservice: DEBUG
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"

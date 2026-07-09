@@ -9,7 +9,54 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ServiceDiscovery" />
       </profile>
-      <profile name="Annotation profile for api-service" enabled="true">
+      <profile name="Annotation profile for PaymentService" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.32/lombok-1.18.32.jar" />
+        </processorPath>
+        <module name="Orderservice" />
+        <module name="LoadBalancing" />
+        <module name="PaymentService" />
+      </profile>
+      <profile name="Annotation profile for Resilience" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+        </processorPath>
+        <module name="UserService" />
+        <module name="Gateway" />
+        <module name="Resilience" />
+      </profile>
+      <profile name="Annotation profile for WebSecurity" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar" />
+        </processorPath>
+        <module name="common-security" />
+        <module name="post-service (2)" />
+        <module name="post-service (3)" />
+        <module name="api-gateway (1)" />
+        <module name="api-gateway (2)" />
+        <module name="auth-service (1)" />
+        <module name="post-service (1)" />
+        <module name="notification-service" />
+        <module name="auth-service" />
+        <module name="post-service" />
+        <module name="notification-service (2)" />
+        <module name="notification-service (1)" />
+        <module name="notification-service (3)" />
+        <module name="api-gateway" />
+        <module name="api-gateway (3)" />
+        <module name="auth-service (2)" />
+        <module name="auth-service (3)" />
+      </profile>
+      <profile name="Annotation profile for ApiGateway" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -17,39 +64,12 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="api-service" />
-        <module name="Orderservice" />
         <module name="book-service" />
-        <module name="UserService" />
-        <module name="Gateway" />
         <module name="review-service" />
         <module name="book-service (1)" />
         <module name="user-service" />
-        <module name="LoadBalancing" />
         <module name="ApiGateway" />
-        <module name="PaymentService" />
         <module name="review-service (1)" />
-      </profile>
-      <profile name="Annotation profile for auth-service" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
-        </processorPath>
-        <module name="api-gateway" />
-        <module name="auth-service" />
-        <module name="WebSecurity" />
-        <module name="Resilience" />
-      </profile>
-      <profile name="Annotation profile for post-service" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
-        </processorPath>
-        <module name="post-service" />
       </profile>
     </annotationProcessing>
   </component>
@@ -58,18 +78,35 @@
       <module name="ApiGateway" options="-parameters" />
       <module name="Gateway" options="-parameters" />
       <module name="LoadBalancing" options="-parameters" />
+      <module name="Logs" options="-parameters" />
+      <module name="Metrics" options="-parameters" />
       <module name="Orderservice" options="-parameters" />
       <module name="PaymentService" options="-parameters" />
       <module name="Resilience" options="-parameters" />
       <module name="ServiceDiscovery" options="-parameters" />
+      <module name="Traces" options="-parameters" />
       <module name="UserService" options="-parameters" />
       <module name="WebSecurity" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
+      <module name="api-gateway (1)" options="-parameters" />
+      <module name="api-gateway (2)" options="-parameters" />
+      <module name="api-gateway (3)" options="-parameters" />
       <module name="api-service" options="-parameters" />
       <module name="auth-service" options="-parameters" />
+      <module name="auth-service (1)" options="-parameters" />
+      <module name="auth-service (2)" options="-parameters" />
+      <module name="auth-service (3)" options="-parameters" />
       <module name="book-service" options="-parameters" />
       <module name="book-service (1)" options="-parameters" />
+      <module name="common-security" options="-parameters" />
+      <module name="notification-service" options="-parameters" />
+      <module name="notification-service (1)" options="-parameters" />
+      <module name="notification-service (2)" options="-parameters" />
+      <module name="notification-service (3)" options="-parameters" />
       <module name="post-service" options="-parameters" />
+      <module name="post-service (1)" options="-parameters" />
+      <module name="post-service (2)" options="-parameters" />
+      <module name="post-service (3)" options="-parameters" />
       <module name="review-service" options="-parameters" />
       <module name="review-service (1)" options="-parameters" />
       <module name="user-service" options="-parameters" />

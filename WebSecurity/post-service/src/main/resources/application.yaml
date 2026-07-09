@@ -1,3 +1,27 @@
 spring:
   application:
     name: post-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/secure_blog_posts
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+
+server:
+  port: 8082
+
+jwt:
+  secret: bXlTdXBlclNlY3JldEtleUZvclNlY3VyZUJsb2dBcHBsaWNhdGlvbjIwMjZNeVN1cGVyU2VjcmV0S2V5
+  expiration: 86400000
+  service-expiration: 3600000
+
+notification-service:
+  url: http://localhost:8083
+
+service:
+  name: post-service
